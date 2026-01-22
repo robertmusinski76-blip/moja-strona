@@ -3,49 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SCRAP CAR Jordanów | Złomowanie i Kasacja Aut</title>
+    <title>SCRAP CAR Jordanów | Złomowanie Brzeziny Łódź</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root { --accent: #ff8c00; --bg: #000; --card: #1a1a1a; }
         body { font-family: sans-serif; margin: 0; background: var(--bg); color: #eee; }
         
-        /* DUŻY NAGŁÓWEK Z WIELKIMI LAWETAMI */
         header { 
             display: flex; 
             justify-content: space-between; 
             align-items: center; 
-            padding: 10px 2%; 
+            padding: 10px 5%; 
             background: #000;
             border-bottom: 4px solid var(--accent);
-            min-height: 220px;
+            min-height: 250px;
         }
         .header-img {
-            width: 350px; /* MAKSYMALNY ROZMIAR LAWET */
+            width: 380px; /* MAKSYMALNA WIELKOŚĆ */
             height: auto;
             border-radius: 15px;
-            box-shadow: 0 0 20px rgba(255, 140, 0, 0.3);
+            box-shadow: 0 0 25px rgba(255, 140, 0, 0.4);
         }
-        .logo { width: 320px; height: auto; }
+        .logo { width: 350px; height: auto; margin: 0 20px; }
         
-        @media (max-width: 1100px) { .header-img { width: 250px; } }
-        @media (max-width: 850px) { .header-img { display: none; } header { justify-content: center; } }
+        @media (max-width: 1200px) { .header-img { width: 280px; } }
+        @media (max-width: 900px) { .header-img { display: none; } header { justify-content: center; min-height: 150px; } }
 
         nav { background: #111; display: flex; justify-content: center; padding: 15px; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #333; }
         nav a { color: #fff; text-decoration: none; margin: 0 20px; font-weight: bold; text-transform: uppercase; }
         nav a:hover { color: var(--accent); }
 
-        .hero { padding: 100px 20px; text-align: center; background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('złomowisko.png'); background-size: cover; background-position: center; }
-        .phone { font-size: 3.5rem; color: #fff; text-decoration: none; font-weight: 900; display: block; margin: 15px 0; }
-        .btn { padding: 15px 35px; border-radius: 5px; text-decoration: none; font-weight: bold; display: inline-flex; align-items: center; gap: 10px; margin-top: 20px; color: white; border: none; }
-        .pdf-btn { background: #444; border: 2px solid var(--accent); }
+        .hero { padding: 120px 20px; text-align: center; background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('złomowisko.png'); background-size: cover; background-position: center; }
+        .phone { font-size: 4rem; color: #fff; text-decoration: none; font-weight: 900; display: block; margin: 20px 0; }
+        .btn { padding: 18px 40px; border-radius: 5px; text-decoration: none; font-weight: bold; display: inline-flex; align-items: center; gap: 10px; color: white; border: none; font-size: 1.1rem; }
+        .pdf-btn { background: #333; border: 2px solid var(--accent); margin-top: 20px; }
 
-        section { max-width: 1200px; margin: 50px auto; padding: 0 20px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
-        .card { background: var(--card); padding: 40px; border-radius: 15px; border-top: 6px solid var(--accent); }
+        section { max-width: 1200px; margin: 60px auto; padding: 0 20px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 40px; }
+        .card { background: var(--card); padding: 45px; border-radius: 20px; border-top: 8px solid var(--accent); }
         
-        /* PRECYZYJNA MAPA */
-        .map-container { width: 100%; height: 500px; border: 3px solid var(--accent); border-radius: 15px; overflow: hidden; margin-top: 30px; }
-        footer { text-align: center; padding: 50px; border-top: 1px solid #333; }
+        .map-container { width: 100%; height: 550px; border: 3px solid var(--accent); border-radius: 20px; overflow: hidden; margin-top: 40px; }
+        footer { text-align: center; padding: 60px; background: #080808; border-top: 1px solid #333; }
     </style>
 </head>
 <body>
@@ -63,37 +61,37 @@
 </nav>
 
 <div class="hero" id="start">
-    <h1 style="font-size: 2.5rem;">STACJA DEMONTAŻU POJAZDÓW JORDANÓW</h1>
+    <h1 style="font-size: 3rem; color: var(--accent);">KASACJA POJAZDÓW JORDANÓW</h1>
     <a href="tel:660693518" class="phone">660 693 518</a>
-    <p style="font-size: 1.5rem;">Płacimy gotówką za każde auto!</p>
+    <p style="font-size: 1.8rem;">Płacimy gotówką za auta osobowe i dostawcze!</p>
 </div>
 
 <section id="zlomowanie">
     <div class="grid">
         <div class="card">
-            <h2><i class="fas fa-recycle"></i> KASACJA I DOKUMENTY</h2>
-            <p>Formalności załatwiamy w 15 minut. Pobierz upoważnienie, jeśli nie jesteś jedynym właścicielem pojazdu.</p>
+            <h2><i class="fas fa-file-signature"></i> FORMALNOŚCI I KASACJA</h2>
+            <p>Wszystkie dokumenty wystawiamy na miejscu. Jeśli potrzebujesz upoważnienia dla współwłaściciela, pobierz je poniżej.</p>
             <a href="UPOWAŻNIENIEzRODO.pdf" download class="btn pdf-btn">
                 <i class="fas fa-file-pdf"></i> POBIERZ UPOWAŻNIENIE
             </a>
         </div>
         <div class="card">
-            <h2><i class="fas fa-truck"></i> LAWETA 24H</h2>
-            <p>Bezpłatny odbiór aut do złomowania z terenu Brzezin, Łodzi i okolic. Zadzwoń i zamów transport!</p>
-            <a href="tel:660693518" class="btn" style="background: var(--accent);">ZAMÓW LAWETĘ</a>
+            <h2><i class="fas fa-truck"></i> TRANSPORT 24H</h2>
+            <p>Posiadamy własną lawetę. Gwarantujemy bezpłatny odbiór aut do złomowania z Brzezin, Łodzi i okolic.</p>
+            <a href="tel:660693518" class="btn" style="background: var(--accent); margin-top: 20px;">ZADZWOŃ TERAZ</a>
         </div>
     </div>
 </section>
 
 <section id="kontakt">
-    <h2 style="text-align: center;">NASZA LOKALIZACJA: JORDANÓW 19</h2>
+    <h2 style="text-align: center; font-size: 2rem;">DOJAZD: JORDANÓW 19, 95-060 BRZEZINY</h2>
     <div class="map-container">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2468.455243831779!2d19.7128691!3d51.7801826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471960959f27df77%3A0xb71a8f673400511e!2sJordan%C3%B3w%2019%2C%2095-060%20Brzeziny!5e0!3m2!1spl!2spl!4v1705930000000!5m2!1spl!2spl" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2468.734563852089!2d19.7214588!3d51.7744414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471bcb8000000001%3A0x6a0a000000000000!2sJordan%C3%B3w%2019%2C%2095-060%20Brzeziny!5e0!3m2!1spl!2spl!4v1700000000000!5m2!1spl!2spl" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     </div>
 </section>
 
 <footer>
-    <p>© 2026 SCRAP CAR | Jordanów 19, 95-060 Brzeziny | www.scrapcar.pl</p>
+    <p>© 2026 SCRAP CAR | Jordanów 19 | www.scrapcar.pl</p>
 </footer>
 
 </body>
