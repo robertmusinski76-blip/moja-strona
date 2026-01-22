@@ -6,7 +6,7 @@
     <title>SCRAP CAR Jordanów | Złomowanie Brzeziny Łódź</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root { --accent: #ff8c00; --bg: #000; --card: #1a1a1a; }
+        :root { --accent: #ff8c00; --bg: #000; --card: #1a1a1a; --fb: #1877F2; }
         
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes drive { 0% { transform: scale(1); } 50% { transform: scale(1.03); } 100% { transform: scale(1); } }
@@ -43,6 +43,11 @@
         .phone:hover { color: var(--accent); }
 
         .btn { padding: 18px 40px; border-radius: 5px; text-decoration: none; font-weight: bold; display: inline-flex; align-items: center; gap: 10px; color: white; border: none; font-size: 1.1rem; transition: 0.3s; cursor: pointer; }
+        
+        /* Styl przycisku FB */
+        .fb-btn { background: var(--fb); margin-top: 15px; box-shadow: 0 4px 15px rgba(24, 119, 242, 0.3); }
+        .fb-btn:hover { transform: scale(1.05); background: #1565c0; }
+
         .pdf-btn { background: #333; border: 2px solid var(--accent); margin-top: 20px; }
         .pdf-btn:hover { background: var(--accent); color: #000; }
 
@@ -52,6 +57,7 @@
         
         .map-container { width: 100%; height: 550px; border: 3px solid var(--accent); border-radius: 20px; overflow: hidden; margin-top: 40px; background: #222; }
         footer { text-align: center; padding: 60px; background: #080808; border-top: 1px solid #333; }
+        .footer-social { margin-top: 20px; font-size: 2rem; color: var(--fb); text-decoration: none; }
     </style>
 </head>
 <body>
@@ -71,21 +77,24 @@
 <div class="hero" id="start">
     <h1 style="font-size: 3rem; color: var(--accent);">ZŁOMOWANIE POJAZDÓW JORDANÓW</h1>
     <a href="tel:660693518" class="phone">660 693 518</a>
-    <p style="font-size: 1.5rem;">Szybka wycena – Gotówka do ręki!</p>
+    
+    <a href="https://www.facebook.com/samochodowa.likwidacja.3/" target="_blank" class="btn fb-btn">
+        <i class="fab fa-facebook"></i> ODWIEDŹ NAS NA FACEBOOKU
+    </a>
 </div>
 
 <section id="zlomowanie">
     <div class="grid">
         <div class="card">
             <h2><i class="fas fa-file-pdf"></i> DOKUMENTY</h2>
-            <p>Pobierz wzór upoważnienia. Jest niezbędny, gdy właściciel nie może być obecny przy złomowaniu auta.</p>
+            <p>Pobierz wzór upoważnienia. Jest niezbędny, gdy właściciel nie może być obecny przy złomowaniu auta (wymagany nr VIN i dane właścicieli).</p>
             <a href="UPOWAŻNIENIEzRODO.pdf" download class="btn pdf-btn">
                 <i class="fas fa-download"></i> POBIERZ UPOWAŻNIENIE
             </a>
         </div>
         <div class="card">
             <h2><i class="fas fa-truck-moving"></i> AUTO ZŁOM</h2>
-            <p>Zapewniamy darmowy transport pojazdów do złomowania z Brzezin, Łodzi i okolicznych miejscowości.</p>
+            <p>Zapewniamy darmowy transport pojazdów do złomowania z Brzezin, Łodzi i okolic. Płacimy gotówką!</p>
             <a href="tel:660693518" class="btn" style="background: var(--accent); margin-top: 20px;">ZAMÓW LAWETĘ</a>
         </div>
     </div>
@@ -95,14 +104,18 @@
     <h2 style="text-align: center; font-size: 2rem;">DOJAZD: JORDANÓW 19</h2>
     <div class="map-container">
         <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2468.9723381664186!2d19.7214717!3d51.7699741!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471966270d740661%3A0x6d11f67f338f0d8b!2sJordan%C3%B3w%2019%2C%2095-060%20Jordan%C3%B3w!5e0!3m2!1spl!2spl!4v1700000000000!5m2!1spl!2spl" 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2468.441864197471!2d19.70425391574174!3d51.78065097968132!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471bb6f4f4699049%3A0x6b4999f16815344c!2zSm9yZGFuw7N3IDE5LCA5NS0wNjAgQnJ6ZXppbnk!5e0!3m2!1spl!2spl!4v1700000000000!5m2!1spl!2spl" 
             width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
         </iframe>
     </div>
 </section>
 
 <footer>
-    <p>© 2026 SCRAP CAR | Jordanów 19, 95-060 Brzeziny | www.scrapcar.pl</p>
+    <p>© 2026 SCRAP CAR | Jordanów 19, 95-060 Brzeziny</p>
+    <a href="https://www.facebook.com/samochodowa.likwidacja.3/" target="_blank" class="footer-social">
+        <i class="fab fa-facebook"></i>
+    </a>
+    <p style="margin-top: 10px;">www.scrapcar.pl</p>
 </footer>
 
 </body>
