@@ -7,51 +7,28 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root { --accent: #ff8c00; --bg: #000; --card: #1a1a1a; --fb: #1877F2; }
-        
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes drive { 0% { transform: scale(1); } 50% { transform: scale(1.03); } 100% { transform: scale(1); } }
-
         body { font-family: sans-serif; margin: 0; background: var(--bg); color: #eee; overflow-x: hidden; line-height: 1.6; }
-        
-        header { 
-            display: flex; justify-content: space-between; align-items: center; 
-            padding: 20px 5%; background: #000; border-bottom: 4px solid var(--accent); min-height: 250px;
-        }
-        .header-img {
-            width: 380px; height: auto; border-radius: 15px;
-            box-shadow: 0 0 25px rgba(255, 140, 0, 0.4);
-            animation: drive 4s ease-in-out infinite;
-        }
+        header { display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; background: #000; border-bottom: 4px solid var(--accent); min-height: 250px; }
+        .header-img { width: 380px; height: auto; border-radius: 15px; box-shadow: 0 0 25px rgba(255, 140, 0, 0.4); animation: drive 4s ease-in-out infinite; }
         .logo { width: 350px; height: auto; }
-        
         @media (max-width: 1200px) { .header-img { width: 280px; } }
         @media (max-width: 900px) { .header-img { display: none; } header { justify-content: center; } }
-
         nav { background: #111; display: flex; justify-content: center; padding: 15px; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #333; }
         nav a { color: #fff; text-decoration: none; margin: 0 20px; font-weight: bold; text-transform: uppercase; transition: 0.3s; font-size: 14px; }
         nav a:hover { color: var(--accent); }
-
-        .hero { 
-            padding: 80px 20px; text-align: center; 
-            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('złomowisko.png'); 
-            background-size: cover; background-position: center; animation: fadeInUp 1s ease-out;
-        }
+        .hero { padding: 80px 20px; text-align: center; background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('złomowisko.png'); background-size: cover; background-position: center; animation: fadeInUp 1s ease-out; }
         .phone { font-size: 3.5rem; color: #fff; text-decoration: none; font-weight: 900; display: block; margin: 20px 0; transition: 0.3s; }
-        .phone:hover { color: var(--accent); transform: scale(1.05); }
-
         .btn { padding: 18px 35px; border-radius: 5px; text-decoration: none; font-weight: bold; display: inline-flex; align-items: center; gap: 10px; color: white; border: none; font-size: 1.1rem; transition: 0.3s; cursor: pointer; }
         .fb-btn { background: var(--fb); margin-bottom: 10px; }
-        .audio-btn { background: #d32f2f; margin-top: 20px; }
+        .audio-btn { background: #d32f2f; margin-top: 20px; border-radius: 50px; padding: 20px 45px; box-shadow: 0 5px 20px rgba(211, 47, 47, 0.4); }
+        .audio-btn:hover { background: #b71c1c; transform: scale(1.05); }
         .pdf-btn { background: #333; border: 2px solid var(--accent); margin-top: 20px; }
-        .pdf-btn:hover { background: var(--accent); color: #000; }
-
         section { max-width: 1200px; margin: 40px auto; padding: 0 20px; animation: fadeInUp 1.2s ease-out; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
         .card { background: var(--card); padding: 40px; border-radius: 20px; border-top: 6px solid var(--accent); transition: 0.4s; }
-        .card h2 { color: var(--accent); margin-top: 0; }
-        
-        .map-container { width: 100%; height: 500px; border: 3px solid var(--accent); border-radius: 20px; overflow: hidden; margin-top: 30px; background: #222; }
-        
+        .map-container { width: 100%; height: 500px; border: 3px solid var(--accent); border-radius: 20px; overflow: hidden; margin-top: 30px; }
         footer { text-align: center; padding: 50px; background: #080808; border-top: 1px solid #333; }
         .footer-social { font-size: 2.5rem; color: var(--fb); text-decoration: none; }
     </style>
@@ -81,12 +58,12 @@
 
 <section id="narrator">
     <div class="card" style="max-width: 950px; margin: 0 auto; text-align: center;">
-        <h2><i class="fas fa-headset"></i> PRZEWODNIK: JAK ZŁOMOWAĆ POJAZD?</h2>
+        <h2><i class="fas fa-headset"></i> POSŁUCHAJ MIŁEGO GŁOSU NARRATORA</h2>
         <div id="text-to-read" style="font-size: 1.15rem; text-align: left; background: #111; padding: 25px; border-radius: 15px; border-left: 5px solid var(--accent); color: #ddd;">
-            Dzień dobry! Oto jak szybko i legalnie zezłomować pojazd. Przede wszystkim przygotuj dowód rejestracyjny oraz dowód osobisty swój, oraz współwłaściciela, jeśli współwłaściciel jest wpisany w dowodzie rejestracyjnym. Jeżeli właściciel lub współwłaściciel nie żyją, potrzebny będzie akt dziedziczenia. Niezbędna jest również polisa OC do wglądu – gdyż możesz zezłomować pojazd najpóźniej w dniu, kiedy kończy się polisa. Jeśli jednak w dokumentach widnieje inna osoba, lub współwłaściciel nie będzie mógł podpisać dokumentów, pobierz z naszej strony wzór upoważnienia. Wypełnij w nim dane właścicieli oraz numer VIN pojazdu. Nie zapomnij o tablicach rejestracyjnych. Pamiętaj, formalności trwają tylko 15 minut. Płacimy gotówką od ręki i wydajemy zaświadczenie do wydziału komunikacji i ubezpieczyciela. Jeśli auto nie jeździ, nasza laweta odbierze je bezpłatnie po wcześniejszym umówieniu terminu odbioru. Zapraszamy i życzymy miłego dnia!
+            Dzień dobry! . Oto jak szybko i legalnie zezłomować pojazd . Przede wszystkim przygotuj dowód rejestracyjny oraz dowód osobisty swój , oraz współwłaściciela , jeśli współwłaściciel jest wpisany w dowodzie rejestracyjnym . Jeżeli właściciel lub współwłaściciel nie żyją , potrzebny będzie akt dziedziczenia . Niezbędna jest również polisa OC do wglądu , gdyż możesz zezłomować pojazd najpóźniej w dniu , kiedy kończy się polisa . Jeśli jednak w dokumentach widnieje inna osoba , lub współwłaściciel nie będzie mógł podpisać dokumentów , pobierz z naszej strony wzór upoważnienia . Wypełnij w nim dane właścicieli , oraz numer VIN pojazdu . Nie zapomnij o tablicach rejestracyjnych . Pamiętaj , formalności trwają tylko 15 minut . Płacimy gotówką od ręki i wydajemy zaświadczenie do wydziału komunikacji i ubezpieczyciela . Jeśli auto nie jeździ , nasza laweta odbierze je bezpłatnie , po wcześniejszym umówieniu terminu odbioru . Zapraszamy i życzymy miłego dnia !
         </div>
         <button onclick="playNarrator()" class="btn audio-btn">
-            <i class="fas fa-play-circle"></i> WŁĄCZ NARRATORA (GŁOS)
+            <i class="fas fa-volume-up"></i> WŁĄCZ CIEPŁY GŁOS NARRATORA
         </button>
     </div>
 </section>
@@ -95,14 +72,14 @@
     <div class="grid">
         <div class="card">
             <h2><i class="fas fa-file-pdf"></i> POBIERZ UPOWAŻNIENIE</h2>
-            <p>Pobierz i wydrukuj wzór upoważnienia, jeśli współwłaściciel nie może być obecny. Pamiętaj o wpisaniu danych z dowodu i numeru VIN.</p>
+            <p>Pobierz i wydrukuj wzór upoważnienia, jeśli współwłaściciel nie może być obecny. Pamiętaj o wpisaniu danych i numeru VIN.</p>
             <a href="UPOWAŻNIENIEzRODO.pdf" download class="btn pdf-btn">
                 <i class="fas fa-download"></i> UPOWAŻNIENIE PDF
             </a>
         </div>
         <div class="card">
             <h2><i class="fas fa-truck-pickup"></i> DARMOWA LAWETA</h2>
-            <p>Odbieramy auta na terenie Brzezin, Łodzi i okolic. Skontaktuj się z nami, aby ustalić dogodny termin odbioru Twojego pojazdu.</p>
+            <p>Odbieramy auta na terenie Brzezin, Łodzi i okolic. Skontaktuj się z nami, aby ustalić dogodny termin odbioru pojazdu.</p>
             <a href="tel:660693518" class="btn" style="background: var(--accent); margin-top: 20px;">ZADZWOŃ: 660 693 518</a>
         </div>
     </div>
@@ -111,10 +88,7 @@
 <section id="kontakt">
     <h2 style="text-align: center;">NASZA LOKALIZACJA: JORDANÓW 19</h2>
     <div class="map-container">
-        <iframe 
-            src="http://googleusercontent.com/maps.google.com/7" 
-            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
-        </iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2466.8252277637844!2d19.7424683!3d51.8002674!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471bb95085e69e4f%3A0x633668858e723063!2sJordan%C3%B3w%2019%2C%2095-060%20Brzeziny!5e0!3m2!1spl!2spl!4v1700000000000!5m2!1spl!2spl" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     </div>
 </section>
 
@@ -133,10 +107,19 @@
         const msg = new SpeechSynthesisUtterance();
         msg.text = text;
         msg.lang = 'pl-PL';
-        msg.rate = 0.9; 
-        msg.pitch = 1.0;
+        msg.rate = 0.85; // Wolniejsze, bardziej ludzkie tempo
+        msg.pitch = 1.0; // Normalna barwa
+
+        // Wybór najlepszego dostępnego polskiego głosu
+        const voices = window.speechSynthesis.getVoices();
+        let selectedVoice = voices.find(v => v.lang === 'pl-PL' && (v.name.includes('Google') || v.name.includes('Natural')));
+        if (!selectedVoice) selectedVoice = voices.find(v => v.lang === 'pl-PL');
+        if (selectedVoice) msg.voice = selectedVoice;
+
         window.speechSynthesis.speak(msg);
     }
+    // Wstępne załadowanie głosów dla przeglądarek
+    window.speechSynthesis.onvoiceschanged = () => { window.speechSynthesis.getVoices(); };
 </script>
 
 </body>
