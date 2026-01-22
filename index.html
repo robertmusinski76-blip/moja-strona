@@ -10,71 +10,71 @@
         :root { --accent: #ff8c00; --bg: #121212; --card: #1e1e1e; }
         body { font-family: sans-serif; margin: 0; background: var(--bg); color: #eee; line-height: 1.6; }
         
-        /* Styl nagłówka z grafikami po bokach */
+        /* Nagłówek z grafikami lawet po bokach */
         header { 
             background: #000; 
-            padding: 20px; 
+            padding: 15px; 
             display: flex; 
-            justify-content: space-around; 
+            justify-content: space-between; 
             align-items: center; 
             border-bottom: 4px solid var(--accent); 
         }
-        .header-side-img {
-            width: 80px;
-            height: 80px;
-            color: var(--accent);
-            font-size: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .header-img {
+            width: 120px; /* Rozmiar lawet w nagłówku */
+            height: auto;
+            border-radius: 5px;
+            border: 1px solid #333;
         }
-        .logo { max-width: 250px; height: auto; }
-        @media (max-width: 600px) { .header-side-img { display: none; } } /* Ukrywa boki na telefonach dla czytelności */
+        .logo { max-width: 220px; height: auto; }
+        
+        /* Ukrywanie bocznych grafik na małych telefonach */
+        @media (max-width: 700px) {
+            .header-img { display: none; }
+            header { justify-content: center; }
+        }
 
         nav { background: #1a1a1a; display: flex; justify-content: center; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #333; }
         nav a { color: #fff; text-decoration: none; padding: 15px 20px; font-weight: bold; text-transform: uppercase; font-size: 13px; }
         nav a:hover { color: var(--accent); }
         
-        .hero { padding: 50px 20px; text-align: center; background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1599256629751-4089906660fb?auto=format&fit=crop&q=80&w=1200'); background-size: cover; }
-        .contact-box { border: 2px solid var(--accent); display: inline-block; padding: 20px; border-radius: 10px; margin-top: 20px; background: rgba(0,0,0,0.5); }
-        .phone { font-size: 2.2rem; color: #fff; text-decoration: none; font-weight: 900; display: block; margin: 10px 0; }
+        .hero { padding: 60px 20px; text-align: center; background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('laweta.png'); background-size: cover; background-position: center; }
+        .contact-box { border: 2px solid var(--accent); display: inline-block; padding: 25px; border-radius: 10px; background: rgba(0,0,0,0.7); }
+        .phone { font-size: 2.5rem; color: #fff; text-decoration: none; font-weight: 900; display: block; margin: 10px 0; }
         
-        .btn { color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-flex; align-items: center; gap: 10px; margin-top: 15px; transition: 0.3s; border: none; cursor: pointer; }
+        .btn { color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-flex; align-items: center; gap: 10px; margin-top: 15px; transition: 0.3s; border: none; }
         .fb-btn { background: #1877F2; }
         .pdf-btn { background: #444; border: 1px solid var(--accent); }
+        .btn:hover { transform: scale(1.05); opacity: 0.9; }
         
-        section { max-width: 1000px; margin: 30px auto; padding: 0 20px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .card { background: var(--card); padding: 25px; border-radius: 10px; border-top: 4px solid var(--accent); display: flex; flex-direction: column; justify-content: space-between; }
-        h1, h2 { color: var(--accent); margin-top: 0; }
-        .map-container { width: 100%; height: 450px; border: 2px solid var(--accent); border-radius: 10px; overflow: hidden; margin-top: 20px; }
-        footer { background: #000; text-align: center; padding: 30px; border-top: 1px solid #333; margin-top: 50px; }
+        section { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .card { background: var(--card); padding: 30px; border-radius: 12px; border-top: 5px solid var(--accent); display: flex; flex-direction: column; justify-content: space-between; }
+        h1, h2 { color: var(--accent); text-transform: uppercase; }
+        .map-container { width: 100%; height: 450px; border: 2px solid var(--accent); border-radius: 12px; overflow: hidden; margin-top: 20px; }
+        footer { background: #000; text-align: center; padding: 40px; border-top: 1px solid #333; }
     </style>
 </head>
 <body>
 
 <header>
-    <div class="header-side-img"><i class="fas fa-truck-pickup"></i></div>
-    
-    <img src="logo.jpg" alt="SCRAP CAR Złomowanie Brzeziny Łódź" class="logo">
-    
-    <div class="header-side-img"><i class="fas fa-recycle"></i></div>
+    <img src="laweta.png" alt="Laweta SCRAP CAR" class="header-img">
+    <img src="logo.jpg" alt="Logo SCRAP CAR" class="logo">
+    <img src="laweta.png" alt="Laweta SCRAP CAR" class="header-img">
 </header>
 
 <nav>
     <a href="#start">Start</a>
     <a href="#zlomowanie">Złomowanie i Szrot</a>
-    <a href="#czesci">Części i Laweta</a>
     <a href="#kontakt">Kontakt</a>
 </nav>
 
 <div class="hero" id="start">
-    <h1>ZŁOMOWANIE POJAZDÓW - BRZEZINY, ŁÓDŹ i OKOLICE</h1>
+    <h1>KASACJA POJAZDÓW - BRZEZINY, ŁÓDŹ I OKOLICE</h1>
     <div class="contact-box">
-        <p>Jordanów 19, 95-060 Brzeziny (trasa Łódź-Brzeziny)</p>
+        <p style="font-size: 1.2rem;">Jordanów 19, 95-060 Brzeziny</p>
         <a href="tel:660693518" class="phone">660 693 518</a>
         <a href="https://www.facebook.com/samochodowa.likwidacja.3/" target="_blank" class="btn fb-btn">
-            <i class="fab fa-facebook"></i> Facebook
+            <i class="fab fa-facebook"></i> FACEBOOK
         </a>
     </div>
 </div>
@@ -83,34 +83,34 @@
     <div class="grid">
         <div class="card">
             <div>
-                <h2><i class="fas fa-recycle"></i> Kasacja i Szrot</h2>
-                <p>Oferujemy legalne <strong>złomowanie aut w Brzezinach i Łodzi</strong>. Płacimy gotówką, wydajemy zaświadczenia od ręki.</p>
-                <p style="font-size: 0.85rem; color: #bbb; margin-top: 10px;">Nie jesteś jedynym właścicielem? Pobierz wzór upoważnienia:</p>
+                <h2><i class="fas fa-recycle"></i> ZŁOMOWANIE</h2>
+                <p>Legalna kasacja aut. Płacimy gotówką i wydajemy zaświadczenia do wydziału komunikacji od ręki.</p>
+                <p style="font-size: 0.85rem; color: #bbb; margin-top: 15px;">Pobierz wzór upoważnienia (dla współwłaścicieli):</p>
             </div>
             <a href="UPOWAŻNIENIEzRODO.pdf" download class="btn pdf-btn">
-                <i class="fas fa-file-pdf"></i> POBIERZ UPOWAŻNIENIE
+                <i class="fas fa-file-pdf"></i> POBIERZ PDF
             </a>
         </div>
         
-        <div class="card" id="czesci">
+        <div class="card">
             <div>
-                <h2><i class="fas fa-cogs"></i> Części i Laweta</h2>
-                <p>Sprzedaż <strong>części używanych</strong> oraz darmowy odbiór aut naszą lawetą w Brzezinach i Łodzi.</p>
+                <h2><i class="fas fa-truck-pickup"></i> LAWETA 24H</h2>
+                <p>Zapewniamy darmowy transport pojazdów przeznaczonych do złomowania na terenie Brzezin, Łodzi i okolic.</p>
             </div>
-            <a href="tel:660693518" class="btn" style="background: var(--accent);">ZAPYTAJ O CZĘŚCI</a>
+            <a href="tel:660693518" class="btn" style="background: var(--accent);">ZAMÓW LAWETĘ</a>
         </div>
     </div>
 </section>
 
 <section id="kontakt">
-    <h2>Kontakt i Dojazd - Jordanów 19</h2>
+    <h2>LOKALIZACJA - JAK DOJECHAĆ?</h2>
     <div class="map-container">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m13!1d2468.2325375545224!2d19.7121!3d51.7828!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47196096317b3f9b%3A0x6b776226064f5195!2zSm9yZGFuw7N3IDE5LCA5NS0wNjAgQnJ6ZXppbnk!5e0!3m2!1spl!2spl!4v1700000000000!5m2!1spl!2spl" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2468.4206014457386!2d19.7144444!3d51.7805556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471bb9564c706917%3A0xc3995878848149e2!2sSCRAP%20CAR!5e0!3m2!1spl!2spl!4v1700000000000" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     </div>
 </section>
 
 <footer>
-    <p>© 2026 SCRAP CAR | <a href="https://www.scrapcar.pl" style="color:white; text-decoration:none;">www.scrapcar.pl</a></p>
+    <p>© 2026 SCRAP CAR | Jordanów 19 | <a href="https://www.scrapcar.pl" style="color:white;">www.scrapcar.pl</a></p>
 </footer>
 
 </body>
