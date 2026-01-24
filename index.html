@@ -16,17 +16,12 @@
 
 body{ margin:0; background:var(--bg); color:#eee; font-family:sans-serif; scroll-behavior: smooth; }
 
-/* NAGŁÓWEK - LAWETY BEZ ANIMACJI */
+/* NAGŁÓWEK - LAWETY STATYCZNE */
 header{
     display:flex; justify-content:space-between; align-items:center;
     padding:20px 5%; border-bottom:4px solid var(--accent); background:#050505;
 }
-.header-img{ 
-    width:280px; 
-    border-radius:15px; 
-    opacity: 0.8;
-    /* Usunięto wszelkie animacje/transformacje */
-}
+.header-img{ width:280px; border-radius:15px; opacity: 0.8; }
 .logo{ width:320px; }
 
 @media(max-width:900px){ .header-img{display:none;} header{justify-content:center;} }
@@ -38,7 +33,7 @@ nav{
 nav a{ color:#fff; margin:0 20px; text-decoration:none; font-weight:bold; text-transform:uppercase; font-size:14px;}
 nav a:hover{color:var(--accent);}
 
-/* SEKACJA GŁÓWNA */
+/* BANER GŁÓWNY */
 .hero{
     padding:60px 20px; text-align:center;
     background:linear-gradient(rgba(0,0,0,.85),rgba(0,0,0,.85)), url('złomowisko.png');
@@ -53,7 +48,7 @@ nav a:hover{color:var(--accent);}
 .fb-btn{background:#1877F2; color:#fff;}
 .pdf-btn{background:var(--accent); color:#000;}
 
-/* KARTA INSTRUKCJI I MECHANIK */
+/* SEKCJA INSTRUKCJI */
 section{ max-width:1100px; margin:30px auto; padding:0 20px; }
 .card{
     background:var(--card); padding:40px; border-radius:30px;
@@ -61,13 +56,17 @@ section{ max-width:1100px; margin:30px auto; padding:0 20px; }
 }
 .mechanic-layout{ display:flex; align-items:center; gap:40px; flex-wrap:wrap; justify-content:center; }
 
+/* POPRAWIONE KOŁO MECHANIKA */
 .mechanic-circle{
-    width:280px; height:280px; border-radius:50%; border:6px solid var(--accent);
-    overflow:hidden; background: var(--accent); position: relative; flex-shrink:0;
+    width:300px; height:300px; border-radius:50%; border:8px solid var(--accent);
+    overflow:hidden; background: var(--accent); flex-shrink:0;
+    box-shadow: 0 0 20px rgba(255,140,0,0.3);
 }
 .mechanic-circle img{ 
-    width: 90%; height: 90%; position: absolute; bottom: 0; left: 5%;
-    object-fit: contain; 
+    width: 100%; height: 100%; 
+    object-fit: cover; /* To sprawia, że obraz wypełnia CAŁE koło */
+    object-position: center; 
+    display: block;
 }
 
 #narrator-text{ 
@@ -110,7 +109,7 @@ footer{ text-align:center; padding:40px; background:#080808; color: #444; border
     <a href="tel:660693518" class="phone">660 693 518</a>
     <div style="display:flex; gap:15px; justify-content:center; flex-wrap:wrap;">
         <a href="https://www.facebook.com/ScrapCarJordanow/" target="_blank" class="btn fb-btn"><i class="fab fa-facebook"></i> FACEBOOK</a>
-        <a href="upowaznienie.pdf" target="_blank" class="btn pdf-btn"><i class="fas fa-file-pdf"></i> UPOWAŻNIENIE PDF</a>
+        <a href="upowaznienie.pdf" target="_blank" class="btn pdf-btn"><i class="fas fa-file-pdf"></i> POBIERZ PDF</a>
     </div>
 </div>
 
@@ -137,7 +136,7 @@ footer{ text-align:center; padding:40px; background:#080808; color: #444; border
     <h2 style="text-align:center; color:var(--accent); text-transform: uppercase;">Jak do nas dojechać?</h2>
     <div class="map-frame">
         <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2472.5441551062064!2d19.721455!3d51.796333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471a2be996841753%3A0x6a0f7e4597d3f23a!2sScrap%20Car%20Stacja%20Demonta%C5%BCu%20Pojazd%C3%B3w!5e0!3m2!1spl!2spl!4v1700000000000" 
+            src="http://googleusercontent.com/maps.google.com/4" 
             width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
         </iframe>
     </div>
@@ -156,7 +155,6 @@ function handleSpeech() {
     if (isSpeaking) { synth.cancel(); isSpeaking = false; btn.innerHTML = '<i class="fas fa-play"></i> ODSŁUCHAJ INSTRUKCJĘ'; return; }
     
     let text = document.getElementById("narrator-text").innerText;
-    // Blokada błędu "Urząd Morski"
     let cleanText = text.replace(/umówieniu/g, "u-mówieniu");
     
     let utterance = new SpeechSynthesisUtterance(cleanText);
