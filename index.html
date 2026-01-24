@@ -12,7 +12,6 @@
     --accent:#ff8c00;
     --bg:#000;
     --card:#1a1a1a;
-    --fb:#1877F2;
 }
 
 body{ margin:0; background:var(--bg); color:#eee; font-family:sans-serif; scroll-behavior: smooth; }
@@ -21,62 +20,73 @@ header{
     display:flex; justify-content:space-between; align-items:center;
     padding:20px 5%; border-bottom:4px solid var(--accent); background:#050505;
 }
-
-.header-img{ width:280px; border-radius:15px; opacity: 0.8; }
 .logo{ width:320px; }
+.header-img{ width:280px; border-radius:15px; opacity: 0.8; }
 
 @media(max-width:900px){ .header-img{display:none;} header{justify-content:center;} }
 
 nav{
     background:#111; display:flex; justify-content:center; padding:15px;
-    position:sticky; top:0; z-index:1000; border-bottom: 1px solid #222;
+    position:sticky; top:0; z-index:1000;
 }
-
-nav a{ color:#fff; margin:0 20px; text-decoration:none; font-weight:bold; text-transform:uppercase; }
+nav a{ color:#fff; margin:0 20px; text-decoration:none; font-weight:bold; text-transform:uppercase; font-size:14px;}
 nav a:hover{color:var(--accent);}
 
+/* HERO */
 .hero{
     padding:80px 20px; text-align:center;
     background:linear-gradient(rgba(0,0,0,.85),rgba(0,0,0,.85)), url('złomowisko.png');
     background-size:cover; background-position: center;
 }
-
 .phone{ font-size:3.5rem; font-weight:900; color:#fff; text-decoration:none; display: block; margin: 20px 0; }
 
 .btn{
     padding:18px 35px; border-radius:5px; display:inline-flex; align-items:center;
-    gap:10px; font-weight:bold; text-decoration:none; border:none; cursor:pointer;
+    gap:10px; font-weight:bold; text-decoration:none; transition: 0.3s;
 }
+.fb-btn{background:#1877F2; color:#fff;}
+.pdf-btn{background:var(--accent); color:#000;}
 
-.fb-btn{background:var(--fb); color:#fff;}
-
+/* SEKACJA INSTRUKCJI - WYGLĄD ZE SCREENA */
 section{ max-width:1200px; margin:40px auto; padding:0 20px; }
 
 .card{
-    background:var(--card); padding:40px; border-radius:20px;
-    border-top:6px solid var(--accent); box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    background:var(--card); padding:50px; border-radius:30px;
+    border: 2px solid #333; box-shadow: 0 20px 40px rgba(0,0,0,0.6);
 }
 
-/* OKRĄGŁE POLE MECHANIKA */
-.mechanic-layout{ display:flex; align-items:center; gap:40px; flex-wrap:wrap; justify-content:center; }
+.mechanic-layout{ display:flex; align-items:center; gap:50px; flex-wrap:wrap; justify-content:center; }
 
+/* KOŁO MECHANIKA - DOPASOWANE DO SCREENA */
 .mechanic-circle{
-    width:260px; height:260px; border-radius:50%; border:8px solid var(--accent);
-    overflow:hidden; background:#ff8c00; flex-shrink:0;
+    width:300px; height:300px; border-radius:50%; border:8px solid var(--accent);
+    overflow:hidden; background: var(--accent); position: relative; flex-shrink:0;
 }
-
-.mechanic-circle img{ width:100%; height:100%; object-fit:contain; object-position:bottom; }
+.mechanic-circle img{ 
+    width: 80%; height: 80%; position: absolute; bottom: 0; left: 10%;
+    object-fit: contain; 
+}
 
 .text-box{ flex:1; min-width:300px; }
+.text-box h2{ display:flex; align-items:center; gap:10px; color: #fff; font-size: 1.8rem; }
 
-#narrator-text{
-    background:#0a0a0a; padding:25px; border-radius:15px;
-    border-left:5px solid var(--accent); color:#ccc; line-height: 1.6;
+#narrator-text{ 
+    background:#0a0a0a; padding:30px; border-radius:20px; 
+    border: 2px solid var(--accent); color:#ccc; line-height: 1.6; font-size: 1.1rem;
 }
 
-.audio-btn{ background:#d32f2f; border-radius:50px; padding:15px 45px; margin-top:20px; color:#fff; font-weight: bold; }
+.audio-btn{ 
+    background:#d32f2f; border-radius:50px; padding:15px 40px; 
+    margin-top:25px; color:#fff; font-weight: bold; border:none; cursor:pointer;
+}
 
-footer{ text-align:center; padding:50px; background:#080808; border-top:1px solid #333; color: #666; }
+/* MAPA */
+.map-container {
+    width: 100%; height: 450px; border-radius: 25px; overflow: hidden;
+    border: 5px solid var(--card); margin-top: 30px;
+}
+
+footer{ text-align:center; padding:60px; background:#080808; color: #555; border-top: 1px solid #222;}
 </style>
 </head>
 
@@ -91,15 +101,17 @@ footer{ text-align:center; padding:50px; background:#080808; border-top:1px soli
 <nav>
     <a href="#start">Start</a>
     <a href="#instrukcja">Instrukcja</a>
-    <a href="https://www.scrapcar.pl/upowaznienie.pdf" target="_blank">Pobierz PDF</a>
+    <a href="#dojazd">Dojazd</a>
+    <a href="upowaznienie.pdf" target="_blank">Pobierz PDF</a>
 </nav>
 
 <div class="hero" id="start">
-    <h1 style="color:var(--accent); font-size:2.8rem; margin:0;">ZŁOMOWANIE POJAZDÓW JORDANÓW</h1>
+    <h1 style="color:var(--accent); font-size:3rem; margin:0;">ZŁOMOWANIE POJAZDÓW JORDANÓW</h1>
     <a href="tel:660693518" class="phone">660 693 518</a>
-    <a href="https://www.facebook.com/ScrapCarJordanow/" target="_blank" class="btn fb-btn">
-        <i class="fab fa-facebook"></i> NASZ FACEBOOK
-    </a>
+    <div style="display:flex; gap:20px; justify-content:center; flex-wrap:wrap;">
+        <a href="https://www.facebook.com/ScrapCarJordanow/" target="_blank" class="btn fb-btn"><i class="fab fa-facebook"></i> FACEBOOK</a>
+        <a href="upowaznienie.pdf" target="_blank" class="btn pdf-btn"><i class="fas fa-file-pdf"></i> UPOWAŻNIENIE PDF</a>
+    </div>
 </div>
 
 <section id="instrukcja">
@@ -108,13 +120,12 @@ footer{ text-align:center; padding:50px; background:#080808; border-top:1px soli
             <div class="mechanic-circle">
                 <img src="mechanik.png" alt="Mechanik">
             </div>
-
             <div class="text-box">
-                <h2 style="color:var(--accent);"><i class="fas fa-info-circle"></i> INSTRUKCJA KROK PO KROKU</h2>
+                <h2><i class="fas fa-info-circle" style="color:var(--accent)"></i> INSTRUKCJA KROK PO KROKU</h2>
                 <div id="narrator-text">
                     Dzień dobry! Oto jak szybko i legalnie zezłomować pojazd. Przede wszystkim przygotuj dowód rejestracyjny oraz dowód osobisty swój oraz współwłaściciela, jeśli współwłaściciel jest wpisany w dowodzie rejestracyjnym. Jeżeli właściciel lub współwłaściciel nie żyją, potrzebny będzie akt dziedziczenia. Niezbędna jest również polisa OC do wglądu – gdyż możesz zezłomować pojazd najpóźniej w dniu, kiedy kończy się polisa. Jeśli jednak w dokumentach widnieje inna osoba lub współwłaściciel nie będzie mógł podpisać dokumentów, pobierz z naszej strony wzór upoważnienia. Wypełnij w nim dane właścicieli oraz numer VIN pojazdu. Nie zapomnij o tablicach rejestracyjnych. Pamiętaj, formalności trwają tylko 15 minut. Płacimy gotówką od ręki i wydajemy zaświadczenie do wydziału komunikacji i ubezpieczyciela. Jeśli auto nie jeździ, nasza laweta odbierze je bezpłatnie po wcześniejszym umówieniu terminu odbioru. Zapraszamy i życzymy miłego dnia!
                 </div>
-                <button id="play-btn" onclick="handleSpeech()" class="btn audio-btn">
+                <button id="play-btn" onclick="handleSpeech()" class="audio-btn">
                     <i class="fas fa-play"></i> ODSŁUCHAJ INSTRUKCJĘ
                 </button>
             </div>
@@ -122,8 +133,16 @@ footer{ text-align:center; padding:50px; background:#080808; border-top:1px soli
     </div>
 </section>
 
+<section id="dojazd">
+    <h2 style="text-align:center; color:var(--accent);">ZNAJDŹ NAS NA MAPIE</h2>
+    <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2470.435728864704!2d19.7153648770283!3d51.743324693444265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471a29367809623b%3A0xc078864f1d4400f9!2sScrap%20Car!5e0!3m2!1spl!2spl!4v1700000000000" 
+        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+</section>
+
 <footer>
-    © 2026 SCRAP CAR | Jordanów 19 | <a href="http://www.scrapcar.pl" style="color:#666; text-decoration:none;">www.scrapcar.pl</a>
+    © 2026 SCRAP CAR | Jordanów 19 | 95-040 Koluszki | www.scrapcar.pl
 </footer>
 
 <script>
@@ -132,33 +151,19 @@ let isSpeaking = false;
 
 function handleSpeech() {
     const btn = document.getElementById("play-btn");
+    if (isSpeaking) { synth.cancel(); isSpeaking = false; btn.innerHTML = '<i class="fas fa-play"></i> ODSŁUCHAJ INSTRUKCJĘ'; return; }
     
-    if (isSpeaking) {
-        synth.cancel();
-        isSpeaking = false;
-        btn.innerHTML = '<i class="fas fa-play"></i> ODSŁUCHAJ INSTRUKCJĘ';
-        return;
-    }
-
-    // POBIERANIE TEKSTU I NAPRAWA "URZĘDU MORSKIEGO" NA SZTYWNO
-    let rawText = document.getElementById("narrator-text").innerText;
-    let cleanText = rawText.replace(/umówieniu/g, "u-mówieniu");
-
-    let utterance = new SpeechSynthesisUtterance(cleanText);
+    let text = document.getElementById("narrator-text").innerText;
+    text = text.replace(/umówieniu/g, "u-mówieniu"); // Naprawa błędu lektora
+    
+    let utterance = new SpeechSynthesisUtterance(text);
     utterance.lang = 'pl-PL';
     utterance.rate = 0.9;
-
-    utterance.onstart = () => {
-        isSpeaking = true;
-        btn.innerHTML = '<i class="fas fa-stop"></i> ZATRZYMAJ';
-    };
-
-    utterance.onend = () => {
-        isSpeaking = false;
-        btn.innerHTML = '<i class="fas fa-play"></i> ODSŁUCHAJ INSTRUKCJĘ';
-    };
-
-    synth.cancel(); // Reset przed startem
+    
+    utterance.onstart = () => { isSpeaking = true; btn.innerHTML = '<i class="fas fa-stop"></i> ZATRZYMAJ'; };
+    utterance.onend = () => { isSpeaking = false; btn.innerHTML = '<i class="fas fa-play"></i> ODSŁUCHAJ INSTRUKCJĘ'; };
+    
+    synth.cancel();
     setTimeout(() => { synth.speak(utterance); }, 100);
 }
 </script>
