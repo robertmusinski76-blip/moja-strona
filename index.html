@@ -59,29 +59,32 @@ nav {
 .fb-btn{background:#1877F2; color:#fff;}
 .pdf-btn{background:var(--accent); color:#000;}
 
-/* INSTRUKCJA I MECHANIK */
+/* INSTRUKCJA I MECHANIK - POPRAWKA WYGLĄDU */
 section{ max-width:1200px; margin:40px auto; padding:0 20px; }
-.card{ background:var(--card); padding:40px; border-radius:30px; border: 1px solid #333; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+.card{ background:var(--card); padding:40px; border-radius:30px; border: 1px solid #333; }
 .mechanic-layout{ display:flex; align-items:center; gap:40px; flex-wrap:wrap; justify-content:center; }
 .mechanic-circle{
-    width:280px; height:280px; border-radius:50%; border:6px solid var(--accent);
-    overflow:hidden; background: var(--accent); flex-shrink:0;
+    width:300px; height:300px; border-radius:50%; border:8px solid var(--accent);
+    overflow:hidden; background: var(--accent); flex-shrink:0; position: relative;
 }
-.mechanic-circle img{ width: 100%; height: 100%; object-fit: cover; }
+.mechanic-circle img{ 
+    width: 100%; height: 100%; 
+    object-fit: cover; /* Naprawa uciętego obrazka */
+    display: block;
+}
+
 #narrator-text{ background:#0a0a0a; padding:25px; border-radius:15px; border-left: 5px solid var(--accent); color:#ccc; line-height: 1.6; }
 .audio-btn{ background:#d32f2f; border-radius:50px; padding:12px 35px; margin-top:20px; color:#fff; font-weight: bold; border:none; cursor:pointer; }
 
-/* SEKCJA USŁUGI - 4 KAFELKI */
+/* SEKCJA USŁUGI */
 .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-top: 30px; }
 .service-box { 
     background: #111; padding: 30px; border-radius: 20px; text-align: center; 
-    border-bottom: 4px solid var(--accent); transition: 0.3s;
+    border-bottom: 4px solid var(--accent);
 }
-.service-box:hover { transform: translateY(-10px); background: #161616; }
 .service-box i { font-size: 45px; color: var(--accent); margin-bottom: 20px; }
-.service-box h3 { margin: 10px 0; font-size: 1.2rem; color: #fff; }
 
-/* MAPA */
+/* MAPA - ODDALONA Z PINEZKĄ */
 .map-frame { width: 100%; height: 450px; border-radius: 20px; overflow: hidden; border: 3px solid var(--card); margin-top: 20px; }
 
 footer{ text-align:center; padding:50px; background:#080808; color: #555; border-top: 1px solid #222; }
@@ -109,7 +112,7 @@ footer{ text-align:center; padding:50px; background:#080808; color: #555; border
     <a href="tel:660693518" class="phone">660 693 518</a>
     <div style="display:flex; gap:15px; justify-content:center; flex-wrap:wrap;">
         <a href="https://www.facebook.com/ScrapCarJordanow/" target="_blank" class="btn fb-btn"><i class="fab fa-facebook"></i> FACEBOOK</a>
-        <a href="upowaznienie.pdf" target="_blank" class="btn pdf-btn"><i class="fas fa-file-pdf"></i> POBIERZ UPOWAŻNIENIE</a>
+        <a href="upowaznienie.pdf" download class="btn pdf-btn"><i class="fas fa-file-pdf"></i> POBIERZ UPOWAŻNIENIE</a>
     </div>
 </div>
 
@@ -141,15 +144,13 @@ footer{ text-align:center; padding:50px; background:#080808; color: #555; border
 <section id="dojazd">
     <h2 style="text-align:center; color:var(--accent); text-transform: uppercase;">Lokalizacja</h2>
     <div class="map-frame">
-        <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19765.432109876543!2d19.7000000!3d51.7600000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471930d28b5a940f%3A0xd9d99da1d659f94a!2sSCRAP%20CAR%20%E2%80%93%20Stacja%20Demonta%C5%BCu%20Pojazd%C3%B3w!5e0!3m2!1spl!2spl!4v1706100000000!5m2!1spl!2spl&z=13" 
-            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19766.12345678901!2d19.680000!3d51.780000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471a2cd28b5a9327%3A0x49d99982d659f94a!2sSCRAP%20CAR%20-%20Stacja%20Demonta%C5%BCu%20Pojazd%C3%B3w!5e0!3m2!1spl!2spl!4v1700000000000!5m2!1spl!2spl&zoom=13" 
+        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     </div>
 </section>
 
 <footer>
-    © 2026 SCRAP CAR | Jordanów 19, 95-060 Brzeziny | tel. 660 693 518 | www.scrapcar.pl
+    © 2026 SCRAP CAR | Jordanów 19, 95-060 BRZEZINY | tel. 660 693 518 | www.scrapcar.pl
 </footer>
 
 <script>
