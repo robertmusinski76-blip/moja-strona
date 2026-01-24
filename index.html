@@ -1,162 +1,181 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SCRAP CAR Jordanów | Złomowanie Brzeziny Łódź</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCRAP CAR Jordanów | Złomowanie Brzeziny Łódź</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root{
+            --accent:#ff8c00;
+            --bg:#000;
+            --card:#1a1a1a;
+            --fb:#1877F2;
+        }
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        body{
+            margin:0;
+            background:var(--bg);
+            color:#eee;
+            font-family:sans-serif;
+            scroll-behavior: smooth;
+        }
 
-<style>
-:root{
-    --accent:#ff8c00;
-    --bg:#000;
-    --card:#1a1a1a;
-    --fb:#1877F2;
-}
+        header{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:20px 5%;
+            border-bottom:4px solid var(--accent);
+            background: #050505;
+        }
 
-body{
-    margin:0;
-    background:var(--bg);
-    color:#eee;
-    font-family:sans-serif;
-}
+        .header-img{
+            width:280px;
+            border-radius:15px;
+            opacity: 0.8;
+        }
 
-header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:20px 5%;
-    border-bottom:4px solid var(--accent);
-}
+        .logo{width:320px; filter: drop-shadow(0 0 10px rgba(255,140,0,0.3));}
 
-.header-img{
-    width:320px;
-    border-radius:15px;
-    box-shadow:0 0 25px rgba(255,140,0,.4);
-}
+        @media(max-width:900px){
+            .header-img{display:none;}
+            header{justify-content:center;}
+        }
 
-.logo{width:320px;}
+        nav{
+            background:#111;
+            display:flex;
+            justify-content:center;
+            padding:15px;
+            position:sticky;
+            top:0;
+            z-index:1000;
+            border-bottom: 1px solid #222;
+        }
 
-@media(max-width:900px){
-    .header-img{display:none;}
-    header{justify-content:center;}
-}
+        nav a{
+            color:#fff;
+            margin:0 20px;
+            text-decoration:none;
+            font-weight:bold;
+            font-size:14px;
+            text-transform:uppercase;
+            transition: 0.3s;
+        }
 
-nav{
-    background:#111;
-    display:flex;
-    justify-content:center;
-    padding:15px;
-    position:sticky;
-    top:0;
-    z-index:1000;
-}
+        nav a:hover{color:var(--accent);}
 
-nav a{
-    color:#fff;
-    margin:0 20px;
-    text-decoration:none;
-    font-weight:bold;
-    font-size:14px;
-    text-transform:uppercase;
-}
+        .hero{
+            padding:80px 20px;
+            text-align:center;
+            background:linear-gradient(rgba(0,0,0,.85),rgba(0,0,0,.85)), url('złomowisko.png');
+            background-size:cover;
+            background-position: center;
+        }
 
-nav a:hover{color:var(--accent);}
+        .phone{
+            font-size:3.5rem;
+            font-weight:900;
+            color:#fff;
+            text-decoration:none;
+            display: block;
+            margin: 20px 0;
+        }
 
-.hero{
-    padding:80px 20px;
-    text-align:center;
-    background:linear-gradient(rgba(0,0,0,.85),rgba(0,0,0,.85)),url("złomowisko.png");
-    background-size:cover;
-}
+        .btn{
+            padding:18px 35px;
+            border-radius:5px;
+            display:inline-flex;
+            align-items:center;
+            gap:10px;
+            font-weight:bold;
+            text-decoration:none;
+            border:none;
+            cursor:pointer;
+            transition: 0.3s;
+        }
 
-.phone{
-    font-size:3.5rem;
-    font-weight:900;
-    color:#fff;
-    text-decoration:none;
-}
+        .fb-btn{background:var(--fb); color:#fff;}
+        .fb-btn:hover{background: #145dbf; transform: translateY(-2px);}
 
-.btn{
-    padding:18px 35px;
-    border-radius:5px;
-    display:inline-flex;
-    align-items:center;
-    gap:10px;
-    font-weight:bold;
-    text-decoration:none;
-    border:none;
-    cursor:pointer;
-}
+        section{
+            max-width:1200px;
+            margin:40px auto;
+            padding:0 20px;
+        }
 
-.fb-btn{background:var(--fb); color:#fff;}
+        .card{
+            background:var(--card);
+            padding:40px;
+            border-radius:20px;
+            border-top:6px solid var(--accent);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
 
-section{
-    max-width:1200px;
-    margin:40px auto;
-    padding:0 20px;
-}
+        /* ====== MECHANIK LAYOUT ====== */
+        .mechanic-layout{
+            display:flex;
+            align-items:center;
+            gap:40px;
+            flex-wrap:wrap;
+            justify-content:center;
+        }
 
-.card{
-    background:var(--card);
-    padding:40px;
-    border-radius:20px;
-    border-top:6px solid var(--accent);
-}
+        .mechanic-circle{
+            width:280px;
+            height:280px;
+            border-radius:50%;
+            border:6px solid var(--accent);
+            overflow:hidden;
+            background: #ff8c00; /* Tło koła pasujące do marki */
+            box-shadow:0 0 30px rgba(255,140,0,.25);
+            flex-shrink:0;
+        }
 
-/* ====== MECHANIK ====== */
-.mechanic-layout{
-    display:flex;
-    align-items:center;
-    gap:40px;
-    flex-wrap:wrap;
-    justify-content:center;
-}
+        .mechanic-circle img{
+            width:100%;
+            height:100%;
+            object-fit: contain; /* Contain lepiej pasuje do grafik postaci */
+            object-position:bottom;
+        }
 
-.mechanic-circle{
-    width:250px;
-    height:250px;
-    border-radius:50%;
-    border:6px solid var(--accent);
-    overflow:hidden;
-    background:#222;
-    box-shadow:0 0 30px rgba(255,140,0,.25);
-    flex-shrink:0;
-}
+        .text-box{
+            flex:1;
+            min-width:300px;
+        }
 
-.mechanic-circle img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    object-position:center;
-    transition:transform .4s ease;
-}
+        #narrator-text{
+            background:#0a0a0a;
+            padding:25px;
+            border-radius:15px;
+            border-left:5px solid var(--accent);
+            color:#ccc;
+            line-height: 1.6;
+            font-size: 1.05rem;
+        }
 
-.mechanic-circle:hover img{
-    transform:scale(1.05);
-}
+        .audio-btn{
+            background:#d32f2f;
+            border-radius:50px;
+            padding:15px 45px;
+            margin-top:25px;
+            color:#fff;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+        }
+        
+        .audio-btn:hover{background: #b71c1c; transform: scale(1.05);}
 
-.text-box{
-    flex:1;
-    min-width:300px;
-}
-
-.audio-btn{
-    background:#d32f2f;
-    border-radius:50px;
-    padding:15px 45px;
-    margin-top:20px;
-    color:#fff;
-}
-
-footer{
-    text-align:center;
-    padding:50px;
-    background:#080808;
-    border-top:1px solid #333;
-}
-</style>
+        footer{
+            text-align:center;
+            padding:50px;
+            background:#080808;
+            border-top:1px solid #333;
+            font-size: 0.9rem;
+            color: #666;
+        }
+    </style>
 </head>
 
 <body>
@@ -169,46 +188,45 @@ footer{
 
 <nav>
     <a href="#start">Start</a>
-    <a href="#instrukcja">Odsłuchaj instrukcję</a>
-    <a href="#pobierz">Pobierz PDF</a>
-    <a href="#kontakt">Dojazd</a>
+    <a href="#instrukcja">Instrukcja</a>
+    <a href="https://www.scrapcar.pl/formularz.pdf" id="pobierz" target="_blank">Pobierz PDF</a>
+    <a href="https://goo.gl/maps/XYZ" id="kontakt" target="_blank">Dojazd</a>
 </nav>
 
 <div class="hero" id="start">
-    <h1 style="color:var(--accent); font-size:2.8rem;">ZŁOMOWANIE POJAZDÓW JORDANÓW</h1>
-    <a href="tel:660693518" class="phone">660 693 518</a><br><br>
+    <h1 style="color:var(--accent); font-size:2.8rem; margin:0;">ZŁOMOWANIE POJAZDÓW JORDANÓW</h1>
+    <a href="tel:660693518" class="phone">660 693 518</a>
     <a href="https://www.facebook.com/ScrapCarJordanow/" target="_blank" class="btn fb-btn">
         <i class="fab fa-facebook"></i> NASZ FACEBOOK
     </a>
 </div>
 
 <section id="instrukcja">
-<div class="card">
-<div class="mechanic-layout">
+    <div class="card">
+        <div class="mechanic-layout">
 
-    <!-- 🔥 MECHANIK -->
-    <div class="mechanic-circle">
-        <img src="mechanik.png" alt="Mechanik SCRAP CAR">
-    </div>
+            <div class="mechanic-circle">
+                <img src="mechanik.png" alt="Mechanik SCRAP CAR">
+            </div>
 
-    <div class="text-box">
-        <h2><i class="fas fa-info-circle"></i> INSTRUKCJA KROK PO KROKU</h2>
+            <div class="text-box">
+                <h2 style="color: var(--accent);"><i class="fas fa-info-circle"></i> INSTRUKCJA KROK PO KROKU</h2>
 
-        <div id="narrator-text" style="background:#111;padding:25px;border-radius:15px;border-left:5px solid var(--accent);color:#ccc;">
-        Dzień dobry! Oto jak szybko i legalnie zezłomować pojazd...
+                <div id="narrator-text">
+                    Dzień dobry! Oto jak szybko i legalnie zezłomować pojazd. Przede wszystkim przygotuj dowód rejestracyjny oraz dowód osobisty swój oraz współwłaściciela. Jeżeli właściciel nie żyje, potrzebny będzie akt dziedziczenia. Niezbędna jest również polisa OC do wglądu. Pamiętaj, formalności trwają tylko 15 minut. Płacimy gotówką od ręki i wydajemy zaświadczenie do wydziału komunikacji. Jeżeli auto nie jeździ, nasza laweta odbierze je bezpłatnie! Zapraszamy i życzymy miłego dnia!
+                </div>
+
+                <button id="play-btn" onclick="handleSpeech()" class="btn audio-btn">
+                    <i class="fas fa-play"></i> ODSŁUCHAJ INSTRUKCJĘ
+                </button>
+            </div>
+
         </div>
-
-        <button id="play-btn" onclick="handleSpeech()" class="btn audio-btn">
-            <i class="fas fa-play"></i> ODSŁUCHAJ
-        </button>
     </div>
-
-</div>
-</div>
 </section>
 
 <footer>
-    © 2026 SCRAP CAR | Jordanów 19 | www.scrapcar.pl
+    © 2026 SCRAP CAR | Jordanów 19 | Brzeziny Łódź | <a href="http://www.scrapcar.pl" style="color:#666; text-decoration:none;">www.scrapcar.pl</a>
 </footer>
 
 <script>
@@ -220,20 +238,31 @@ function handleSpeech(){
     if(isSpeaking){
         synth.cancel();
         isSpeaking=false;
-        btn.innerHTML='<i class="fas fa-play"></i> ODSŁUCHAJ';
+        btn.innerHTML='<i class="fas fa-play"></i> ODSŁUCHAJ INSTRUKCJĘ';
+        btn.style.background = "#d32f2f";
     }else{
         const text=document.getElementById("narrator-text").innerText;
         const u=new SpeechSynthesisUtterance(text);
         u.lang='pl-PL';
-        u.rate=0.85;
+        u.rate=0.9; // Naturalne tempo
+        u.pitch=1;
+        
+        u.onstart = () => {
+            isSpeaking=true;
+            btn.innerHTML='<i class="fas fa-stop"></i> ZATRZYMAJ LEKTORA';
+            btn.style.background = "#333";
+        };
+
+        u.onend=()=>{
+            isSpeaking=false;
+            btn.innerHTML='<i class="fas fa-play"></i> ODSŁUCHAJ INSTRUKCJĘ';
+            btn.style.background = "#d32f2f";
+        };
+
         synth.speak(u);
-        isSpeaking=true;
-        btn.innerHTML='<i class="fas fa-stop"></i> WYŁĄCZ';
-        u.onend=()=>{isSpeaking=false;btn.innerHTML='<i class="fas fa-play"></i> ODSŁUCHAJ';};
     }
 }
 </script>
 
 </body>
 </html>
-
