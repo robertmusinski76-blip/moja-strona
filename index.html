@@ -16,77 +16,77 @@
 
 body{ margin:0; background:var(--bg); color:#eee; font-family:sans-serif; scroll-behavior: smooth; }
 
+/* NAGŁÓWEK - LAWETY BEZ ANIMACJI */
 header{
     display:flex; justify-content:space-between; align-items:center;
     padding:20px 5%; border-bottom:4px solid var(--accent); background:#050505;
 }
+.header-img{ 
+    width:280px; 
+    border-radius:15px; 
+    opacity: 0.8;
+    /* Usunięto wszelkie animacje/transformacje */
+}
 .logo{ width:320px; }
-.header-img{ width:280px; border-radius:15px; opacity: 0.8; }
 
 @media(max-width:900px){ .header-img{display:none;} header{justify-content:center;} }
 
 nav{
     background:#111; display:flex; justify-content:center; padding:15px;
-    position:sticky; top:0; z-index:1000;
+    position:sticky; top:0; z-index:1000; border-bottom: 1px solid #333;
 }
 nav a{ color:#fff; margin:0 20px; text-decoration:none; font-weight:bold; text-transform:uppercase; font-size:14px;}
 nav a:hover{color:var(--accent);}
 
-/* HERO */
+/* SEKACJA GŁÓWNA */
 .hero{
-    padding:80px 20px; text-align:center;
+    padding:60px 20px; text-align:center;
     background:linear-gradient(rgba(0,0,0,.85),rgba(0,0,0,.85)), url('złomowisko.png');
     background-size:cover; background-position: center;
 }
-.phone{ font-size:3.5rem; font-weight:900; color:#fff; text-decoration:none; display: block; margin: 20px 0; }
+.phone{ font-size:3.5rem; font-weight:900; color:#fff; text-decoration:none; display: block; margin: 15px 0; }
 
 .btn{
-    padding:18px 35px; border-radius:5px; display:inline-flex; align-items:center;
+    padding:15px 30px; border-radius:5px; display:inline-flex; align-items:center;
     gap:10px; font-weight:bold; text-decoration:none; transition: 0.3s;
 }
 .fb-btn{background:#1877F2; color:#fff;}
 .pdf-btn{background:var(--accent); color:#000;}
 
-/* SEKACJA INSTRUKCJI - WYGLĄD ZE SCREENA */
-section{ max-width:1200px; margin:40px auto; padding:0 20px; }
-
+/* KARTA INSTRUKCJI I MECHANIK */
+section{ max-width:1100px; margin:30px auto; padding:0 20px; }
 .card{
-    background:var(--card); padding:50px; border-radius:30px;
-    border: 2px solid #333; box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+    background:var(--card); padding:40px; border-radius:30px;
+    border: 1px solid #333; box-shadow: 0 15px 35px rgba(0,0,0,0.7);
 }
+.mechanic-layout{ display:flex; align-items:center; gap:40px; flex-wrap:wrap; justify-content:center; }
 
-.mechanic-layout{ display:flex; align-items:center; gap:50px; flex-wrap:wrap; justify-content:center; }
-
-/* KOŁO MECHANIKA - DOPASOWANE DO SCREENA */
 .mechanic-circle{
-    width:300px; height:300px; border-radius:50%; border:8px solid var(--accent);
+    width:280px; height:280px; border-radius:50%; border:6px solid var(--accent);
     overflow:hidden; background: var(--accent); position: relative; flex-shrink:0;
 }
 .mechanic-circle img{ 
-    width: 80%; height: 80%; position: absolute; bottom: 0; left: 10%;
+    width: 90%; height: 90%; position: absolute; bottom: 0; left: 5%;
     object-fit: contain; 
 }
 
-.text-box{ flex:1; min-width:300px; }
-.text-box h2{ display:flex; align-items:center; gap:10px; color: #fff; font-size: 1.8rem; }
-
 #narrator-text{ 
-    background:#0a0a0a; padding:30px; border-radius:20px; 
-    border: 2px solid var(--accent); color:#ccc; line-height: 1.6; font-size: 1.1rem;
+    background:#0a0a0a; padding:25px; border-radius:15px; 
+    border-left: 5px solid var(--accent); color:#ccc; line-height: 1.6;
 }
 
 .audio-btn{ 
-    background:#d32f2f; border-radius:50px; padding:15px 40px; 
-    margin-top:25px; color:#fff; font-weight: bold; border:none; cursor:pointer;
+    background:#d32f2f; border-radius:50px; padding:12px 35px; 
+    margin-top:20px; color:#fff; font-weight: bold; border:none; cursor:pointer;
 }
 
 /* MAPA */
-.map-container {
-    width: 100%; height: 450px; border-radius: 25px; overflow: hidden;
-    border: 5px solid var(--card); margin-top: 30px;
+.map-frame {
+    width: 100%; height: 400px; border-radius: 20px; overflow: hidden;
+    border: 3px solid var(--card); margin-top: 20px;
 }
 
-footer{ text-align:center; padding:60px; background:#080808; color: #555; border-top: 1px solid #222;}
+footer{ text-align:center; padding:40px; background:#080808; color: #444; border-top: 1px solid #222;}
 </style>
 </head>
 
@@ -106,9 +106,9 @@ footer{ text-align:center; padding:60px; background:#080808; color: #555; border
 </nav>
 
 <div class="hero" id="start">
-    <h1 style="color:var(--accent); font-size:3rem; margin:0;">ZŁOMOWANIE POJAZDÓW JORDANÓW</h1>
+    <h1 style="color:var(--accent); font-size:2.5rem; margin:0;">ZŁOMOWANIE POJAZDÓW JORDANÓW</h1>
     <a href="tel:660693518" class="phone">660 693 518</a>
-    <div style="display:flex; gap:20px; justify-content:center; flex-wrap:wrap;">
+    <div style="display:flex; gap:15px; justify-content:center; flex-wrap:wrap;">
         <a href="https://www.facebook.com/ScrapCarJordanow/" target="_blank" class="btn fb-btn"><i class="fab fa-facebook"></i> FACEBOOK</a>
         <a href="upowaznienie.pdf" target="_blank" class="btn pdf-btn"><i class="fas fa-file-pdf"></i> UPOWAŻNIENIE PDF</a>
     </div>
@@ -121,7 +121,7 @@ footer{ text-align:center; padding:60px; background:#080808; color: #555; border
                 <img src="mechanik.png" alt="Mechanik">
             </div>
             <div class="text-box">
-                <h2><i class="fas fa-info-circle" style="color:var(--accent)"></i> INSTRUKCJA KROK PO KROKU</h2>
+                <h2 style="display:flex; align-items:center; gap:10px;"><i class="fas fa-info-circle" style="color:var(--accent)"></i> INSTRUKCJA KROK PO KROKU</h2>
                 <div id="narrator-text">
                     Dzień dobry! Oto jak szybko i legalnie zezłomować pojazd. Przede wszystkim przygotuj dowód rejestracyjny oraz dowód osobisty swój oraz współwłaściciela, jeśli współwłaściciel jest wpisany w dowodzie rejestracyjnym. Jeżeli właściciel lub współwłaściciel nie żyją, potrzebny będzie akt dziedziczenia. Niezbędna jest również polisa OC do wglądu – gdyż możesz zezłomować pojazd najpóźniej w dniu, kiedy kończy się polisa. Jeśli jednak w dokumentach widnieje inna osoba lub współwłaściciel nie będzie mógł podpisać dokumentów, pobierz z naszej strony wzór upoważnienia. Wypełnij w nim dane właścicieli oraz numer VIN pojazdu. Nie zapomnij o tablicach rejestracyjnych. Pamiętaj, formalności trwają tylko 15 minut. Płacimy gotówką od ręki i wydajemy zaświadczenie do wydziału komunikacji i ubezpieczyciela. Jeśli auto nie jeździ, nasza laweta odbierze je bezpłatnie po wcześniejszym umówieniu terminu odbioru. Zapraszamy i życzymy miłego dnia!
                 </div>
@@ -134,10 +134,12 @@ footer{ text-align:center; padding:60px; background:#080808; color: #555; border
 </section>
 
 <section id="dojazd">
-    <h2 style="text-align:center; color:var(--accent);">ZNAJDŹ NAS NA MAPIE</h2>
-    <div class="map-container">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2470.435728864704!2d19.7153648770283!3d51.743324693444265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471a29367809623b%3A0xc078864f1d4400f9!2sScrap%20Car!5e0!3m2!1spl!2spl!4v1700000000000" 
-        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    <h2 style="text-align:center; color:var(--accent); text-transform: uppercase;">Jak do nas dojechać?</h2>
+    <div class="map-frame">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2472.5441551062064!2d19.721455!3d51.796333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471a2be996841753%3A0x6a0f7e4597d3f23a!2sScrap%20Car%20Stacja%20Demonta%C5%BCu%20Pojazd%C3%B3w!5e0!3m2!1spl!2spl!4v1700000000000" 
+            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+        </iframe>
     </div>
 </section>
 
@@ -154,9 +156,10 @@ function handleSpeech() {
     if (isSpeaking) { synth.cancel(); isSpeaking = false; btn.innerHTML = '<i class="fas fa-play"></i> ODSŁUCHAJ INSTRUKCJĘ'; return; }
     
     let text = document.getElementById("narrator-text").innerText;
-    text = text.replace(/umówieniu/g, "u-mówieniu"); // Naprawa błędu lektora
+    // Blokada błędu "Urząd Morski"
+    let cleanText = text.replace(/umówieniu/g, "u-mówieniu");
     
-    let utterance = new SpeechSynthesisUtterance(text);
+    let utterance = new SpeechSynthesisUtterance(cleanText);
     utterance.lang = 'pl-PL';
     utterance.rate = 0.9;
     
