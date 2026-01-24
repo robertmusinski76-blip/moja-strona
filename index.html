@@ -233,39 +233,6 @@ function handleSpeech(){
     }
 }
 </script>
-<script>
-    let synth = window.speechSynthesis;
-    let isSpeaking = false;
-
-    function handleSpeech() {
-        const btn = document.getElementById('play-btn');
-        
-        if (isSpeaking) {
-            synth.cancel();
-            isSpeaking = false;
-            btn.innerHTML = '<i class="fas fa-play"></i> ODSŁUCHAJ';
-            btn.style.background = '#d32f2f';
-        } else {
-            synth.cancel(); 
-            const text = document.getElementById('narrator-text').innerText;
-            const utterance = new SpeechSynthesisUtterance(text);
-            
-            utterance.lang = 'pl-PL';
-            utterance.rate = 0.85; 
-
-            utterance.onend = () => {
-                isSpeaking = false;
-                btn.innerHTML = '<i class="fas fa-play"></i> ODSŁUCHAJ';
-                btn.style.background = '#d32f2f';
-            };
-
-            synth.speak(utterance);
-            isSpeaking = true;
-            btn.innerHTML = '<i class="fas fa-stop"></i> WYŁĄCZ';
-            btn.style.background = '#333';
-        }
-    }
-</script>
 
 </body>
 </html>
