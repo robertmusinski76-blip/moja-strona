@@ -212,26 +212,59 @@ footer{
 </footer>
 
 <script>
+<script>
 let synth = window.speechSynthesis;
-let isSpeaking=false;
+let isSpeaking = false;
 
-function handleSpeech(){
-    const btn=document.getElementById("play-btn");
-    if(isSpeaking){
+function handleSpeech() {
+    const btn = document.getElementById("play-btn");
+    
+    // Jeśli lektor już mówi - zatrzymaj go
+    if (synth.speaking || isSpeaking) {
         synth.cancel();
-        isSpeaking=false;
-        btn.innerHTML='<i class="fas fa-play"></i> ODSŁUCHAJ';
-    }else{
-        const text=document.getElementById("narrator-text").innerText;
-        const u=new SpeechSynthesisUtterance(text);
-        u.lang='pl-PL';
-        u.rate=0.85;
-        synth.speak(u);
-        isSpeaking=true;
-        btn.innerHTML='<i class="fas fa-stop"></i> WYŁĄCZ';
-        u.onend=()=>{isSpeaking=false;btn.innerHTML='<i class="fas fa-play"></i> ODSŁUCHAJ';};
+        isSpeaking = false;
+        btn.innerHTML = '<i class="fas fa-play"></i> ODSŁUCHAJ INSTRUKCJĘ';
+        btn.style.background = "#d32f2f";
+        return;
     }
+
+    const textElement = document.getElementById("narrator-text");
+    // Oczyszczamy tekst ze zbędnych spacji i nowych linii przed czytaniem
+    const cleanText = textElement.innerText.replace(/\s+/g, ' ').trim();
+    
+    const utternance = new SpeechSynthesisUtterance(cleanText);
+    
+    // KONFIGURACJA GŁOSU
+    utternance.lang = 'pl-PL';
+    utternance.rate = 0.9;  // Nieco wolniej, żeby wyraźniej akcentował
+    utternance.pitch = 1.0; // Naturalna barwa
+    utternance.volume = 1.0;
+
+    utternance.onstart = () => {
+        isSpeaking = true;
+        btn.innerHTML = '<i class="fas fa-stop"></i> ZATRZYMAJ';
+        btn.style.background = "#333";
+    };
+
+    utternance.onend = () => {
+        isSpeaking = false;
+        btn.innerHTML = '<i class="fas fa-play"></i> ODSŁUCHAJ INSTRUKCJĘ';
+        btn.style.background = "#d32f2f";
+    };
+
+    utternance.onerror = (event) => {
+        console.error("Błąd lektora:", event.error);
+        synth.cancel();
+        isSpeaking = false;
+    };
+
+    // Wymuszenie zatrzymania innych procesów mowy przed startem
+    synth.cancel();
+    setTimeout(() => {
+        synth.speak(utternance);
+    }, 100);
 }
+</script>
 </script>
 
 </body>
